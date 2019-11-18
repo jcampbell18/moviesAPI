@@ -1,67 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<!-- Page Title -->
-    <title>Project 1: AJAX-JSON-API</title>
+    <!-- Page Title -->
+    <title>iNavig8</title>
 
-<!-- Metadata -->
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <meta name="author" content="Valdyn Hunt and Jason Campbell"/>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Valdyn Hunt and Jason Campbell" />
 
-<!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png"/>
-    <link rel="manifest" href="img/favicons/site.webmanifest"/>
-    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
-    <meta name="msapplication-TileColor" content="#2b5797"/>
-    <meta name="theme-color" content="#ffffff"/>
+    <!-- Favicons -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="img/favicons/site.webmanifest" />
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" /> -->
 
-<!-- Normalize CSS via CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-<!-- Required Plugin Stylesheets -->    
-    
-<!-- My Awesome Styling -->
-    <link rel="stylesheet" href="css/styles.css"/>
+    <!-- Required Plugin Stylesheets -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My Awesome Styling -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-<!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville"/>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville" />
 
 </head>
 
 <body>
-    
-    <div id="container">
-        <header>
-            <h1>Movie Database Search</h1>
-            <h5>by Valdyn Hunt &amp; Jason Campbell</h5>
-        </header>
-        <nav>
-            <form id="main" action="">
-                <label for="search">Search</label>
-                <input type="search" id="search" placeholder="by Movie title or IMDB ID (i.e., dragon, fast or star)" name="q" aria-label="Search by movie title or IMDB id">
-                <input id="submit" type="submit" value="search">       
-            </form>
-        </nav>
-        <main>
-            <!--  JSON Data  -->
-        </main>
-        <footer>
-            <div>Copyright &copy;<span class="currentYear">YEAR</span>,</div>
-            <div>Valdyn Hunt &amp; Jason Campbell.</div>
-            <div>All rights reserved.</div>
-        </footer>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/img/logo.png" width="40" height="30"
+                class="d-inline-block align-top" alt="">
+            iNavig8
+        </a>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-2">
+                <div class="panel panel-blue">
+
+                    <div class="row justify-content-center">
+
+                        <button type="button" class="col-8 btn btn-primary btn-sm panel-button">Import</button>
+
+                    </div>
+
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-coffee fa-2x"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-utensils fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-restroom fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-heartbeat fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-recycle fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-fire-extinguisher fa-2x"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-hand-paper fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-map-marker fa-2x"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-image fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-square fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-pencil-alt fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-draw-polygon fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-redo fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-right"><i class="fas fa-undo fa-2x"></i></div>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="col-6">
+                            <div class="panel panel-purple panel-left"><i class="fas fa-plus fa-2x"></i></div>
+                        </div>
+
+                        <div class="col-6">
+
+<svg width="41px" height="51px" viewBox="0 0 416 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="utensils-solid-copy" fill="#000000" fill-rule="nonzero">
+            <path d="M212,97 C212.8,101.7 224,109.7 224,144 C224,196.3 196.2,233.6 155.1,248.6 L168,486.7 C168.7,500.4 157.8,512 144,512 L80,512 C66.3,512 55.3,500.5 56,486.7 L68.9,248.6 C27.7,233.6 0,196.2 0,144 C0,109.6 9.2,101.7 10,97 C13.2,76.7 61.4,-5.4 64,16.3 L64,157.5 C65.3,160.9 79.1,160.7 80,157.5 C81.4,132.2 106.9,14.6 107,12 C110.3,-8.8 142.5,132.2 143.9,157.5 C144.8,160.7 158.7,160.9 159.9,157.5 L159.9,16.3 C162.5,-5.3 208.8,76.7 212,97 Z M327.1,300.9 L312.1,486 C310.9,500 322,512 336,512 L392,512 C405.3,512 416,501.3 416,488 L416,24 C416,10.8 405.3,3.55271368e-15 392,3.55271368e-15 C309.5,3.55271368e-15 262,50 327.1,300.9 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
+                            <!-- <div class="panel panel-purple panel-right"><i class="fas fa-minus fa-2x"></i></div> -->
+                        </div>
+                    </div>
+
+                    <div class="row padding justify-content-center">
+
+                        <button type="button" class="col-8 btn btn-primary btn-sm panel-button">Export</button>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="col-7">
+                    <canvas id="myCanvas" width="600" height="600">
+                            <p>This is fallback content for users of assistive technologies or of browsers that don't have full support for the Canvas API.</p>
+                          </canvas>
+            </div>
+            <div class="col-3">
+        <div class="data">
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+
+            </div>
+
+        </div>
+
+    </div>
     </div>
 
+    <img id="ceb" src="img/EWU-CEB.png" alt="CEB map">
+
     <!-- jQuery Library via CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/35376ec146.js" crossorigin="anonymous"></script>
+    <script src="/js/jcanvas.min.js"></script>
     <!-- Plugins(s) -->
-    
+
     <!-- My Scripts -->
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
+
 </html>
